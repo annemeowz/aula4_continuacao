@@ -1,0 +1,199 @@
+Vendedor
+
+package model;
+
+public class Vendedor extends Pessoa {
+private float salario;
+
+public Vendedor(byte codigo, String nome, String cpf) {
+    super(codigo, nome, cpf); "codigo": Unknown word.
+}
+
+public float getSalario() {
+return this.salario;
+}
+
+public void setSalario(float salario) {
+this.salario = salario;
+}
+}
+
+--------------------------------------------------
+Produto
+
+package model;
+
+public class Produto {
+    private String sku;
+    private String codigoDeBarra;  "codigo": Unknown word.
+    private String nome;
+    private float preco;      "preco": Unknown word.
+    private short qtdEmEstoque;
+
+    public Produto(String sku,String nome, float preco) { "preco": Unknown word.
+    this.sku = sku;
+    this.nome = nome;
+    this.preco = preco;   "preco": Unknown word.
+
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public String getCodigoDeBarra() {
+        return codigoDeBarra;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
+
+    public short getQtdEmEstoque() {
+        return qtdEmEstoque;
+    }
+
+    public void setQtdEmEstoque(short qtdEmEstoque) {
+        this.qtdEmEstoque = qtdEmEstoque;
+    }
+}
+
+----------------------------------------------------
+
+Item
+
+package model;
+
+public class Item {
+    private Produto produto;
+    private byte quantidade;
+    public Item(Produto produto,byte quantidade){
+        this.produto = produto;
+        this.quantidade = quantidade;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+    
+    }
+    
+    -------------------------------------------
+    
+    App java
+    
+    import model.Cliente;
+import model.Pessoa;
+import model.Produto;
+import model.Item;
+import model.Vendedor;
+
+public class App {
+public static void main(String[] args) throws Exception{
+    Cliente cliente = new Cliente(
+        (byte)33,
+        nome:"Florisbaldo",: Unknown word.
+        cpf:"519.992.780-97"
+    );
+    Vendedor vendedor = new Vendedor(
+        (byte) 1,
+        nome:"Paulo Gilberto",
+        cpf:"721.233.840-03"
+    );
+    Item item = new Item(
+    new Produto(
+        sku:"ABC123",
+        nome:"Bolacha Trakinas Banana", "Trakinas"
+        preco:3.44f
+    ),
+    (byte) 5
+    );
+}
+}
+
+
+
+    ); 
+}
+}
+
+
+----------------------------------------------------
+
+Cliente
+
+package model;
+
+public class Cliente extends Pessoa {
+    private short pontosDeFidelidade;
+
+    public Cliente(byte codigo, String nome, String cpf) {
+        super(codigo, nome, cpf);    "codigo" Unknown word.
+        this.pontosDeFidelidade = 20;
+    }
+
+    public short getPontosDeFidelidade() {
+        return this.pontosDeFidelidade;
+    }
+
+    public void setPontosDeFidelidade(short pontosDeFidelidade) {
+        this.pontosDeFidelidade = pontosDeFidelidade;
+    }
+}
+
+
+----------------------------------------------------------
+
+Pessoa
+
+package model;
+
+public abstract class Pessoa {
+    protected byte codigo;
+    protected String nome;
+    protected String cpf;
+
+    protected Pessoa(byte codigo,String nome,String cpf)  {
+    this.codigo = codigo;
+    this.nome = nome;
+    this.cpf = cpf;
+    }
+
+    // Métodos assessores
+    // Getters
+    public byte getCodigo() {
+        return this.codigo;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    // Setters
+    public void setCodigo(byte codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+}
+ Pessoa {
+    
+}
